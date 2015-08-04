@@ -80,8 +80,11 @@ public class DescriptionStore {
 		if(CORE_LOCATION != null) {
 			treeWalker = new TreeWalker(CORE_LOCATION);
 		}
-
-		treeWalker.parseConfiguration(this);
+		if (treeWalker == null) {
+			System.out.println("Warning: We are running DescriptionStore without a proper CoreLocation!");
+		} else {
+            treeWalker.parseConfiguration(this);
+		}
 	}
 	
 	public CredentialDescription getCredentialDescription(short id) {
