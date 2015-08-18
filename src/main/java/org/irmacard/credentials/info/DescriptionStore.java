@@ -63,12 +63,6 @@ public class DescriptionStore {
 	 * @throws Exception if CoreLocation has not been set
 	 */
 	public static DescriptionStore getInstance() throws InfoException {
-		if(CORE_LOCATION == null && treeWalker == null) {
-			// TODO: Improve exception type
-			throw new InfoException(
-					"Please set CoreLocation before using the DescriptionStore");
-		}
-
 		if(ds == null) {
 			ds = new DescriptionStore();
 		}
